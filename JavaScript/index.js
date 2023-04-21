@@ -1,7 +1,7 @@
 class TextScramble {
     constructor(el) {
         this.el = el
-        this.chars = '!<>-_\\/[]{}—=+*^?#________'
+        this.chars = '!<>-_\\/[]{}—=+*^?#01010101010101____'
         this.update = this.update.bind(this)
     }
     setText(newText) {
@@ -30,7 +30,7 @@ class TextScramble {
                 complete++
                 output += to
             } else if (this.frame >= start) {
-                if (!char || Math.random() < 0.28) {
+                if (!char || Math.random() < .18) {
                     char = this.randomChar()
                     this.queue[i].char = char
                 }
@@ -59,8 +59,26 @@ class TextScramble {
 const phrases = [
     'The Matrix is a system',
     'That System is our enemy.',
-    'Now choose your pill,',
-    'Neo.',
+    'I can only show you the door,',
+    'You have to be the one',
+    'To step through it.',
+    'And remember',
+    'All I am offering',
+    'is the Truth.',
+    'Nothing more.',
+    'The Truth',
+    'The Truth',
+    'The Truth',
+    'The Truth',
+    'The Truth',
+    'The Truth',
+    'The Truth',
+    'The Truth',
+    'The Truth',
+    'The Truth',
+    'The Truth',
+    'The Truth',
+    'The Truth',    
 ]
 
 const el = document.querySelector('.text')

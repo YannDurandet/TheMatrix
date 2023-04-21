@@ -1,3 +1,5 @@
+/* GENERAL */
+
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap');
 
 * {
@@ -7,51 +9,94 @@
 body {
     background-color: black;
     color: rgb(27, 147, 35);
-    background-image: url("assets/blurry-gradient-haikei.svg");
-    background-repeat: none;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
 }
 
 a {
     text-decoration: none;
     color: white;
-    font-size: 32px;
-}
-
-#content {
-    margin: 0 auto;
-    max-width: 1000px;
-    text-align: center;
     font-size: 24px;
-}
-
-.Title {
-    text-align: center;
-    font-size: 64px;
-    font-family: cutive mono;
 }
 
 p {
     font-size: 20px;
 }
 
-.pills {
+/* COMMON */
+
+#content {
+    margin: 0 auto;
+    max-width: 1200px;
+    text-align: center;
+    font-size: 24px;
+    height: 100vh;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    opacity: 0.4;
+    margin-top: 0px;
+    transition: all 300ms ease;
+    font-size: 16px;
+}
+
+.footer:hover {
+    color: rgb(27, 147, 35);
+    opacity: 1;
+}
+
+/* INDEX */
+
+.text {
+    font-size: 64px;
+}
+
+.dud {
+    color: #5e5e5e;
+}
+
+.fa-angles-down {
+    animation: fadeIn 1s ease-in-out 16s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(0);
+        /* start position */
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(-1000%);
+        /* end position */
+    }
+}
+
+.pillsHolder {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 120px 0 0 0;
+    margin: 0 auto 120px auto;
+    max-width: 800px;
+}
 
+.pill {
+    width: 300px;
+    height: 60px;
+    border: none;
+    cursor: pointer;
+    border-radius: 60px;
+    transition: all 300ms ease;
 }
 
 .redPill {
-    width: 380px;
-    height: 60px;
     background-color: rgb(236, 0, 0);
-    border: none;
-    border-radius: 60px;
     box-shadow: 0 0 16px rgb(236, 0, 0);
-    cursor: pointer;
-    transition: all 300ms ease;
 }
 
 .redPill:hover {
@@ -61,57 +106,17 @@ p {
 }
 
 .bluePill {
-    width: 380px;
-    height: 60px;
     background-color: rgb(0, 136, 255);
-    border: none;
-    border-radius: 60px;
-    box-shadow: 0 0 32px rgb(0, 136, 255);
-    cursor: pointer;
-    transition: all 300ms ease;
+    box-shadow: 0 0 16px rgb(0, 136, 255);
 }
 
 .bluePill:hover {
     filter: brightness(1.2);
     color: white;
+    box-shadow: 0 0 32px rgb(0, 136, 255);
 }
 
-.math {
-    margin: 60px auto;
-    cursor: default;
-    max-width: fit-content;
-    background-color: black;
-    padding: 15px 20px;
-    border: 1px solid rgb(27, 147, 35);
-    box-shadow: 0 0 32px rgb(27, 147, 35);
-    color: white;
-}
-
-.mathButton {
-    height: 40px;
-    width: 40px;
-    border: none;
-    background-color: rgb(27, 147, 35);
-    box-shadow: 0 0 32px rgb(27, 147, 35);
-    color: white;
-    cursor: pointer;
-    transition: all 300ms ease;
-    font-size: 24px;
-
-}
-
-.mathButton:hover {
-    background-color: white;
-    color: rgb(27, 147, 35);
-    box-shadow: 0 0 32px white;
-}
-
-.paragraph {
-    font-size: 24px;
-    text-align: center;
-    margin: 0 auto;
-    max-width: 800px;
-}
+/* Red Pill */
 
 .container {
     height: 100%;
@@ -121,34 +126,47 @@ p {
     display: flex;
 }
 
-.text {
-    font-weight: 100;
-    font-size: 64px;
+#textHolder {
+    margin-top: 100px;
 }
 
-.dud {
-    color: #e0e0e0;
-}
-
-.comptage {
-    margin-top: 60px;
-}
-
-canvas {
-    border: 1px solid black;
-    background-color: rgba(255, 255, 255, 0.353);
+.paragraph {
+    font-size: 24px;
+    text-align: center;
     margin: 0 auto;
+    max-width: 800px;
 }
 
-.bottom{
-    margin: 0 auto;
-    max-width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    opacity: 0.3;
+.join {
+    margin: 60px auto;
+    cursor: default;
+    max-width: fit-content;
+    background-color: black;
+    padding: 15px 20px;
+    border: 1px solid rgb(27, 147, 35);
+    box-shadow: 0 0 16px rgb(27, 147, 35);
+    color: #F1F1F1;
+    font-size: 24px;
     transition: all 300ms ease;
 }
 
-.bottom:hover{
-    opacity: 1;
+.join:hover {
+    color: #FFFFFF;
+    border: 1px solid rgb(255, 255, 255);
+    box-shadow: 0 0 32px rgb(27, 147, 35);
+}
+
+/* GAME */
+
+canvas {
+    margin: 0 auto;
+    border: 1px solid rgb(27, 147, 35);
+}
+
+.footerHolder {
+    margin: 0 auto;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    transition: all 300ms ease;
 }
